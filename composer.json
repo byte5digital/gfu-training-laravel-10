@@ -1,11 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "byte5digital/gfu-training-laravel-10",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Laravel training practice project.",
+    "keywords": ["laravel", "framework", "byte5", "training"],
     "license": "MIT",
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/breeze": "^1.26",
         "laravel/framework": "^10.10",

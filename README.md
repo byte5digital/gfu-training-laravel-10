@@ -22,7 +22,7 @@
 # Einrichtung der Entwicklungsumgebung
 Erstelle ein neues Projekt mit dem Composer
 ```shell
-composer create-project laravel/laravel gfu-training-laravel-10;
+composer create-project laravel/laravel gfu-training-laravel-10
 ```
 
 Sobald das neue Projekt erstellt wurde, kannst du den lokalen Entwicklungsserver von Laravel mit dem Serve-Befehl von
@@ -47,11 +47,6 @@ Datenbank-Engine. Aktualisiere zunächst deine _.env_-Konfigurationsdatei, um de
 zu verwenden. Du kannst die anderen Datenbankkonfigurationsoptionen entfernen:
 ```dotenv
 DB_CONNECTION=sqlite
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=
 ```
 
 Sobald du deine Datenbank konfiguriert hast, kannst du die Datenbankmigrationen ausführen, dadurch werden die 
@@ -110,3 +105,4 @@ npm run dev
 Bei Erfolg erscheinen jetzt in deiner lokalen _Laravel_-Instanz rechts oben in der Ecke die beiden neuen Links 
 [Log in](http://127.0.0.1:8000/login) und [Register](http://127.0.0.1:8000/register). Nach der Registrierung kannst du
 dein eigene sProfil aufrufen, bearbeiten und auch deinen eigenen Account wieder löschen.
+
