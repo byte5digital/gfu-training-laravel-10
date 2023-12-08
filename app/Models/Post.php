@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\App;
+use Illuminate\View\View;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -67,4 +68,25 @@ class Post extends Model
     {
         return 'slug';
     }
+
+    /**
+     * Explodes the content-text as single paragraphs and returns as an array
+     *
+     * @return array
+     */
+    public function getTextAsParagraphs(): array
+    {
+        return preg_split('#[\r\n]+#', $this->text);
+    }
+
+    /**
+     * Returns the Links to the details page
+     *
+     * @return string
+     */
+    public function getReadMoreLinkAttribute(): string
+    {
+        return route('blog.view', [$this->slug]);
+    }
+
 }

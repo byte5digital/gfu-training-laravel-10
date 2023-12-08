@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HelloWorldController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,9 +30,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+require __DIR__.'/auth.php';
+
 Route::middleware('auth')
     ->name('profile.')
-    ->prefix('profile')
+    ->prefix('/profile')
     ->group(function () {
         Route::get('/', [ProfileController::class, 'edit'])
             ->name('edit');
@@ -41,4 +44,11 @@ Route::middleware('auth')
             ->name('destroy');
     });
 
-require __DIR__.'/auth.php';
+Route::name('blog.')
+    ->prefix('/blog')
+    ->group(function() {
+        Route::get('/', [PostController::class, 'index'])
+            ->name('index');
+        Route::get('/{post}', [PostController::class, 'view'])
+            ->name('view');
+    });
