@@ -10,7 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
 
                 @foreach ($posts as $post)
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div class="p-6">
                         <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">{{ $post->title }}</h2>
                         <p class="mb-1">{{ $post->getTextAsParagraphs()[0] }}</p>
                         <a href="{{ $post->readMoreLink }}" class="">Weiterlesen</a>
@@ -21,7 +21,13 @@
                         --}}
                     </div>
                 @endforeach
+
             </div>
+
+            <div class="py-6">
+                {{ $posts->links() }}
+            </div>
+
         </div>
     </div>
 </x-app-layout>
